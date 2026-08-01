@@ -1,26 +1,28 @@
 /** @format */
 
-import React from 'react';
 import { ChevronUp, Github, Linkedin, Code2, Heart, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
+    const { t } = useLanguage();
+
     const navLinks = [
-        { label: 'Home', href: '#hero' },
-        { label: 'About', href: '#about' },
-        { label: 'Skills', href: '#skills' },
-        { label: 'Services', href: '#services' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Contact', href: '#contact' },
+        { key: 'nav.home', href: '#hero' },
+        { key: 'nav.about', href: '#about' },
+        { key: 'nav.skills', href: '#skills' },
+        { key: 'nav.services', href: '#services' },
+        { key: 'nav.portfolio', href: '#portfolio' },
+        { key: 'nav.contact', href: '#contact' },
     ];
 
     const socialLinks = [
         { icon: <Github size={18} />, href: 'https://github.com/EvgenVelichko', label: 'GitHub' },
-        { icon: <Linkedin size={18} />, href: 'https://linkedin.com', label: 'LinkedIn' },
+        { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/evgen-velichko-755527338/', label: 'LinkedIn' },
         { icon: <Mail size={18} />, href: 'mailto:evgenvelichko4@gmail.com', label: 'Email' },
     ];
 
     return (
-        <footer className="relative pt-20 pb-8 overflow-hidden" style={{ background: '#020617' }}>
+        <footer className="relative pt-20 pb-8 overflow-hidden section-fade-top" style={{ background: '#020617' }}>
             {/* Top gradient line */}
             <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.4), rgba(168,85,247,0.3), transparent)' }}></div>
 
@@ -67,7 +69,7 @@ export const Footer: React.FC = () => {
                             </span>
                         </a>
                         <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: '#64748b' }}>
-                            Full-Stack Developer crafting modern web experiences with clean code and creative solutions.
+                            {t('footer.description')}
                         </p>
 
                         {/* Location tag */}
@@ -79,7 +81,7 @@ export const Footer: React.FC = () => {
 
                     {/* Navigation column */}
                     <div className="md:col-span-3">
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] mb-5" style={{ color: '#475569' }}>Navigation</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] mb-5" style={{ color: '#475569' }}>{t('footer.navigation')}</h4>
                         <nav className="flex flex-col gap-3">
                             {navLinks.map((link, i) => (
                                 <a
@@ -91,7 +93,7 @@ export const Footer: React.FC = () => {
                                     onMouseLeave={(e) => { e.currentTarget.style.color = '#64748b'; }}
                                 >
                                     <span className="w-0 h-px transition-all duration-300 group-hover:w-3" style={{ background: '#818cf8' }}></span>
-                                    {link.label}
+                                    {t(link.key)}
                                 </a>
                             ))}
                         </nav>
@@ -99,7 +101,7 @@ export const Footer: React.FC = () => {
 
                     {/* Connect column */}
                     <div className="md:col-span-4">
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] mb-5" style={{ color: '#475569' }}>Connect</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.2em] mb-5" style={{ color: '#475569' }}>{t('footer.connect')}</h4>
 
                         {/* Social links as mini cards */}
                         <div className="space-y-2.5">
@@ -137,11 +139,11 @@ export const Footer: React.FC = () => {
                 {/* Bottom */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-xs flex items-center gap-1.5" style={{ color: '#475569' }}>
-                        &copy; {new Date().getFullYear()} Evgen Velychko. Built with
+                        &copy; {new Date().getFullYear()} {t('footer.copyright')} {t('footer.builtWith')}
                         <Heart size={12} style={{ color: '#6366f1' }} fill="#6366f1" />
                     </p>
                     <p className="text-xs" style={{ color: '#334155' }}>
-                        Designed & Developed by Evgen
+                        {t('footer.designed')}
                     </p>
                 </div>
             </div>

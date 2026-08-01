@@ -1,19 +1,23 @@
-import React from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { Navbar } from './components/Nav/Navbar';
-import { Hero } from './components/Hero/Hero';
-import { About } from './components/About/About';
-import { Skills } from './components/Skills/Skills';
-import { Services } from './components/Services/Services';
-import { Portfolio } from './components/Portfolio/Portfolio';
-import { Certificates } from './components/Certificates/Certificates';
-import { Contact } from './components/Contact/Contact';
-import { Footer } from './components/Footer/Footer';
+import { useReveal } from './hooks/useReveal';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
+import { Navbar } from './components/layout/Navbar';
+import { Footer } from './components/layout/Footer';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Skills } from './components/sections/Skills';
+import { Services } from './components/sections/Services';
+import { Portfolio } from './components/sections/Portfolio';
+import { Certificates } from './components/sections/Certificates';
+import { Contact } from './components/sections/Contact';
 
 function App() {
+  useReveal();
+  useSmoothScroll();
+
   return (
     <LanguageProvider>
-      <div className="min-h-screen text-white" style={{ background: '#020617' }}>
+      <div className="min-h-screen text-white bg-[#020617]">
         <Navbar />
         <Hero />
         <About />

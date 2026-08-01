@@ -1,18 +1,20 @@
 /** @format */
 
-import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { memo, useMemo } from 'react';
+import { useGitHubRepos, isExcluded } from '@/hooks/useGitHub';
+import type { GitHubRepo } from '@/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SkillData {
     name: string;
     percentage: number;
 }
 
-const SkillItem: React.FC<{
+const SkillItem = memo(({ name, percentage, index }: {
     name: string;
     percentage: number;
     index: number;
-}> = ({ name, percentage, index }) => {
+}) => {
     const circumference = 2 * Math.PI * 42;
     const offset = circumference - (percentage / 100) * circumference;
     const gradientId = `skillGrad-${index}`;
@@ -79,9 +81,9 @@ const SkillItem: React.FC<{
             </span>
         </div>
     );
-};
+});
 
-const skills: SkillData[] = [
+const defaultSkills: SkillData[] = [
     { name: 'HTML5', percentage: 95 },
     { name: 'Git', percentage: 95 },
     { name: 'JavaScript', percentage: 80 },
@@ -90,30 +92,68 @@ const skills: SkillData[] = [
     { name: 'React', percentage: 25 },
 ];
 
-export const Skills: React.FC = () => {
+const SKILL_LANGUAGE_MAP: Record<string, string[]> = {
+    'HTML5': ['HTML', 'CSS'],
+    'JavaScript': ['JavaScript'],
+    'TypeScript': ['TypeScript'],
+    'Python': ['Python'],
+};
+
+const computeSkills = (repos: GitHubRepo[]): SkillData[] => {
+    const withLang = repos.filter(r => !r.fork && !isExcluded(r) && r.language);
+    if (withLang.length === 0) return defaultSkills;
+
+    const counts: Record<string, number> = {};
+    withLang.forEach(repo => {
+        Object.entries(SKILL_LANGUAGE_MAP).forEach(([skill, langs]) => {
+            if (langs.includes(repo.language as string)) {
+                counts[skill] = (counts[skill] || 0) + 1;
+            }
+        });
+    });
+
+    const entries = Object.entries(counts);
+    if (entries.length === 0) return defaultSkills;
+
+    const total = withLang.length;
+    const maxShare = Math.max(...entries.map(([, count]) => count / total));
+    const scale = 90 / maxShare;
+
+    const computed: SkillData[] = entries.map(([name, count]) => ({
+        name,
+        percentage: Math.max(Math.round((count / total) * scale), 10),
+    }));
+    computed.sort((a, b) => b.percentage - a.percentage);
+
+    return [...computed, { name: 'Git', percentage: 90 }];
+};
+
+export const Skills = () => {
+    const { repos, loaded } = useGitHubRepos();
+    const { t } = useLanguage();
+    const skills = useMemo(
+        () => (loaded ? computeSkills(repos) : defaultSkills),
+        [repos, loaded],
+    );
+
     return (
         <section
             id="skills"
-            className="py-28 relative overflow-hidden"
-            style={{
-                background:
-                    'linear-gradient(180deg, #020617 0%, #070b16 50%, #020617 100%)',
-            }}>
+            className="py-28 relative overflow-hidden section-base section-fade-top section-fade-bottom">
             {/* Decorative background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full blur-[160px]"
-                    style={{ background: 'rgba(99,102,241,0.05)' }}></div>
+                    className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full blur-[160px] animate-float-slow"
+                    style={{ background: 'rgba(99,102,241,0.06)' }}></div>
                 <div
-                    className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full blur-[140px]"
-                    style={{ background: 'rgba(168,85,247,0.04)' }}></div>
+                    className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full blur-[140px] animate-float-slower"
+                    style={{ background: 'rgba(168,85,247,0.05)' }}></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                {/* Section Header */}
-                <div className="text-center mb-20">
+                <div className="reveal text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold text-white">
-                        My Skills
+                        {t('skills.title')}
                     </h2>
                     <div
                         className="mt-4 mx-auto w-12 h-1 rounded-full"
@@ -123,23 +163,23 @@ export const Skills: React.FC = () => {
                         }}></div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                     {skills.map((skill, index) => (
-                        <SkillItem
-                            key={index}
-                            index={index}
-                            name={skill.name}
-                            percentage={skill.percentage}
-                        />
+                        <div key={index} className={`reveal reveal-delay-${index % 4} w-[120px]`}>
+                            <SkillItem
+                                index={index}
+                                name={skill.name}
+                                percentage={skill.percentage}
+                            />
+                        </div>
                     ))}
                 </div>
 
-                {/* Bottom CTA */}
-                <div className="text-center mt-16">
+                <div className="reveal reveal-delay-2 text-center mt-16">
                     <a
                         href="#portfolio"
                         className="group inline-flex items-center gap-2.5 px-8 py-4 bg-white text-gray-950 font-semibold rounded-full hover:bg-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-white/10 text-sm">
-                        See My Work
+                        {t('skills.seeWork')}
                     </a>
                 </div>
             </div>

@@ -7,68 +7,118 @@ export const translations = {
       services: 'Services',
       portfolio: 'Portfolio',
       certificates: 'Certificates',
-      contact: 'Contact'
+      contact: 'Contact',
+      language: 'Language',
     },
     hero: {
-      title: 'FULL-STACK DEVELOPER',
-      subtitle: 'Welcome to my portfolio',
-      description: 'I\'m a Full-stack developer passionate about creating innovative and effective web applications. I have extensive experience working with various technologies and tools.',
-      viewWork: 'View My Work',
-      contactMe: 'Contact Me'
+      greeting: "Hi, I'm Evgen",
+      roles: ['Front-End Developer', 'React Enthusiast', 'UI/UX Lover', 'Problem Solver'],
+      description:
+        'I build pixel-perfect, accessible web experiences with modern technologies. Focused on performance, clean architecture, and delightful interactions.',
+      viewProjects: 'View Projects',
+      getInTouch: 'Get in Touch',
+      findMe: 'Find me',
+      role: 'Full-Stack Developer',
+      years: '7+ years',
+      name: 'Evgen Velychko',
     },
     about: {
-      title: 'ABOUT ME',
-      personalInfo: 'PERSONAL INFORMATION',
+      title: 'About Me',
+      years: 'Years Experience',
+      projectsDone: 'Projects Done',
+      technologies: 'Technologies',
+      dedication: 'Dedication',
       name: 'Name',
       age: 'Age',
-      address: 'Address',
+      location: 'Location',
       nationality: 'Nationality',
       languages: 'Languages',
-      experience: 'years of experience',
-      background: 'MY BACKGROUND',
-      downloadCV: 'Download CV'
+      projects: 'Projects',
+      background: 'My Background',
+      bg1:
+        'I am a Full-Stack Developer with over 7 years of experience building web applications. I specialize in creating innovative and effective web solutions using modern technologies.',
+      bg2:
+        "I'm passionate about clean code, great user experiences, and building scalable apps that solve real problems.",
+      highlight1: 'React, TypeScript, Vue.js, Node.js expertise',
+      highlight2: 'Cloud platforms & CI/CD experience',
+      highlight3: 'Clean code & scalable architecture',
+      highlight4: 'User-centered design approach',
+      letsTalk: "Let's Talk",
     },
     skills: {
-      title: 'MY SKILLS',
-      subtitle: 'Technical Proficiency',
-      seeWork: 'See My Work'
+      title: 'My Skills',
+      seeWork: 'See My Work',
     },
     services: {
-      title: 'MY SERVICES',
-      subtitle: 'What I Offer',
+      title: 'My Services',
+      subtitle: 'I offer a range of services to help build effective, scalable web solutions.',
       webDev: 'Web Development',
-      webDevDesc: 'Custom website development of any complexity with clean code and modern design principles.',
+      webDevDesc:
+        'Custom website development of any complexity with clean code, modern design principles, and optimized performance. From landing pages to complex web applications.',
       frontendDev: 'Frontend Development',
-      frontendDevDesc: 'Creating responsive, intuitive user interfaces using modern JavaScript frameworks.',
+      frontendDevDesc:
+        'Creating responsive, intuitive user interfaces using React, Vue, Angular and cutting-edge CSS frameworks.',
+      uiux: 'UI/UX Design',
+      uiuxDesc:
+        'Crafting beautiful, user-centered interfaces with attention to detail, accessibility, and modern design trends.',
       backendDev: 'Backend Development',
-      backendDevDesc: 'Building robust server-side applications and APIs using modern technologies.',
+      backendDevDesc:
+        'Building robust server-side applications, RESTful APIs, and microservices with Node.js and Python.',
       dbDesign: 'Database Design',
-      dbDesignDesc: 'Designing and implementing efficient database structures for optimal data storage and retrieval.'
+      dbDesignDesc:
+        'Designing efficient database architectures for optimal performance, scalability, and data integrity.',
+      mobileFirst: 'Mobile-First',
+      mobileFirstDesc:
+        'Responsive, mobile-optimized experiences that work flawlessly across all devices and screen sizes.',
+      tagCustomSites: 'Custom Sites',
+      tagPrototyping: 'Prototyping',
+      tagDesignSystems: 'Design Systems',
+      tagResponsive: 'Responsive',
+      tagCrossPlatform: 'Cross-Platform',
+      tagPwa: 'PWA',
+      haveProject: 'Have a project in mind?',
+      collaborate: "Let's collaborate",
     },
     portfolio: {
-      title: 'MY PORTFOLIO',
-      subtitle: 'Recent Projects'
+      title: 'Portfolio',
+      subtitle: 'Each project demonstrates my skills and approach to problem-solving.',
+      previous: 'Previous page',
+      next: 'Next page',
+      goToPage: 'Go to page',
+      enlarge: 'Click to enlarge',
     },
     certificates: {
-      title: 'MY CERTIFICATES',
-      subtitle: 'Professional Development'
+      title: 'Certificates',
+      issuedBy: 'Issued by:',
+      enlarge: 'Click to enlarge',
     },
     contact: {
-      title: 'CONTACT ME',
-      subtitle: 'Get In Touch',
-      name: 'Your Name',
-      email: 'Your Email',
+      title: 'Contact Me',
+      email: 'Email',
+      phone: 'Phone',
+      location: 'Location',
+      name: 'Name',
+      emailLabel: 'Email',
       subject: 'Subject',
       message: 'Message',
+      namePh: 'John Doe',
+      emailPh: 'john@example.com',
+      subjectPh: 'Project Inquiry',
+      messagePh: "Hello, I'd like to discuss a project...",
       send: 'Send Message',
       sending: 'Sending...',
-      success: 'Your message has been sent successfully. I\'ll get back to you soon!',
-      error: 'There was an error sending your message. Please try again later.'
+      success: "Message sent successfully! I'll get back to you soon.",
+      error: 'Error sending message. Please try again later.',
     },
     footer: {
-      rights: 'All rights reserved.',
-      position: 'Full-Stack Developer'
-    }
+      description:
+        'Full-Stack Developer crafting modern web experiences with clean code and creative solutions.',
+      navigation: 'Navigation',
+      connect: 'Connect',
+      copyright: 'Evgen Velychko.',
+      builtWith: 'Built with',
+      designed: 'Designed & Developed by Evgen',
+    },
   },
   uk: {
     nav: {
@@ -78,138 +128,123 @@ export const translations = {
       services: 'Послуги',
       portfolio: 'Портфоліо',
       certificates: 'Сертифікати',
-      contact: 'Контакти'
+      contact: 'Контакти',
+      language: 'Мова',
     },
     hero: {
-      title: 'FULL-STACK РОЗРОБНИК',
-      subtitle: 'Ласкаво просимо до мого портфоліо',
-      description: 'Я Full-stack розробник, який захоплюється створенням інноваційних та ефективних веб-додатків. Маю великий досвід роботи з різними технологіями та інструментами.',
-      viewWork: 'Мої роботи',
-      contactMe: 'Зв\'язатися'
+      greeting: "Привіт, я Євгеній",
+      roles: [
+        'Front-End розробник',
+        'Ентузіаст React',
+        'Люблю UI/UX',
+        'Розв’язую задачі',
+      ],
+      description:
+        'Я створюю піксель-перфектні, доступні веб-застосунки з сучасними технологіями. Фокус на продуктивності, чистій архітектурі та приємних взаємодіях.',
+      viewProjects: 'Мої проєкти',
+      getInTouch: 'Зв’язатися',
+      findMe: 'Знайти мене',
+      role: 'Full-Stack розробник',
+      years: '7+ років',
+      name: 'Євгеній Величко',
     },
     about: {
-      title: 'ПРО МЕНЕ',
-      personalInfo: 'ОСОБИСТА ІНФОРМАЦІЯ',
-      name: 'Ім\'я',
+      title: 'Про мене',
+      years: 'Років досвіду',
+      projectsDone: 'Виконаних проєктів',
+      technologies: 'Технологій',
+      dedication: 'Відданість',
+      name: 'Ім’я',
       age: 'Вік',
-      address: 'Адреса',
+      location: 'Місто',
       nationality: 'Національність',
       languages: 'Мови',
-      experience: 'років досвіду',
-      background: 'МІЙ ДОСВІД',
-      downloadCV: 'Завантажити резюме'
+      projects: 'Проєкти',
+      background: 'Мій досвід',
+      bg1:
+        'Я Full-Stack розробник з понад 7 роками досвіду створення веб-застосунків. Спеціалізуюся на інноваційних та ефективних веб-рішеннях з використанням сучасних технологій.',
+      bg2:
+        'Я захоплююся чистим кодом, чудовим користувацьким досвідом та створенням масштабованих застосунків, які вирішують реальні проблеми.',
+      highlight1: 'Досвід з React, TypeScript, Vue.js, Node.js',
+      highlight2: 'Хмарні платформи та CI/CD',
+      highlight3: 'Чистий код та масштабована архітектура',
+      highlight4: 'Орієнтація на користувача',
+      letsTalk: 'Обговоримо',
     },
     skills: {
-      title: 'МОЇ НАВИЧКИ',
-      subtitle: 'Технічна компетентність',
-      seeWork: 'Переглянути роботи'
+      title: 'Мої навички',
+      seeWork: 'Мої роботи',
     },
     services: {
-      title: 'МОЇ ПОСЛУГИ',
-      subtitle: 'Що я пропоную',
+      title: 'Мої послуги',
+      subtitle:
+        'Я пропоную комплекс послуг для створення ефективних та масштабованих веб-рішень.',
       webDev: 'Веб-розробка',
-      webDevDesc: 'Розробка веб-сайтів будь-якої складності з чистим кодом та сучасними принципами дизайну.',
+      webDevDesc:
+        'Розробка веб-сайтів будь-якої складності з чистим кодом, сучасним дизайном та оптимізованою продуктивністю. Від лендінгів до складних веб-застосунків.',
       frontendDev: 'Frontend розробка',
-      frontendDevDesc: 'Створення адаптивних, інтуїтивних користувацьких інтерфейсів з використанням сучасних JavaScript фреймворків.',
+      frontendDevDesc:
+        'Створення адаптивних, інтуїтивних інтерфейсів з використанням React, Vue, Angular та сучасних CSS-фреймворків.',
+      uiux: 'UI/UX дизайн',
+      uiuxDesc:
+        'Створення красивих, орієнтованих на користувача інтерфейсів з увагою до деталей, доступності та сучасних дизайн-трендів.',
       backendDev: 'Backend розробка',
-      backendDevDesc: 'Створення надійних серверних додатків та API з використанням сучасних технологій.',
-      dbDesign: 'Проектування баз даних',
-      dbDesignDesc: 'Проектування та впровадження ефективних структур баз даних для оптимального зберігання та отримання даних.'
+      backendDevDesc:
+        'Створення надійних серверних застосунків, REST API та мікросервісів з використанням Node.js та Python.',
+      dbDesign: 'Проєктування баз даних',
+      dbDesignDesc:
+        'Проєктування ефективних архітектур баз даних для оптимальної продуктивності, масштабованості та цілісності даних.',
+      mobileFirst: 'Mobile-First',
+      mobileFirstDesc:
+        'Адаптивні, оптимізовані для мобільних пристроїв рішення, які бездоганно працюють на всіх екранах.',
+      tagCustomSites: 'Власні сайти',
+      tagPrototyping: 'Прототипування',
+      tagDesignSystems: 'Дизайн-системи',
+      tagResponsive: 'Адаптивність',
+      tagCrossPlatform: 'Крос-платформеність',
+      tagPwa: 'PWA',
+      haveProject: 'Маєте проєкт?',
+      collaborate: 'Співпрацюймо',
     },
     portfolio: {
-      title: 'МОЄ ПОРТФОЛІО',
-      subtitle: 'Останні проекти'
+      title: 'Портфоліо',
+      subtitle: 'Кожен проєкт демонструє мої навички та підхід до вирішення задач.',
+      previous: 'Попередня сторінка',
+      next: 'Наступна сторінка',
+      goToPage: 'Перейти до сторінки',
+      enlarge: 'Натисніть, щоб збільшити',
     },
     certificates: {
-      title: 'МОЇ СЕРТИФІКАТИ',
-      subtitle: 'Професійний розвиток'
+      title: 'Сертифікати',
+      issuedBy: 'Видано:',
+      enlarge: 'Натисніть, щоб збільшити',
     },
     contact: {
-      title: 'КОНТАКТИ',
-      subtitle: 'Зв\'яжіться зі мною',
-      name: 'Ваше ім\'я',
-      email: 'Ваш email',
+      title: 'Контакти',
+      email: 'Email',
+      phone: 'Телефон',
+      location: 'Місто',
+      name: 'Ім’я',
+      emailLabel: 'Email',
       subject: 'Тема',
       message: 'Повідомлення',
+      namePh: 'Іван Петренко',
+      emailPh: 'ivan@example.com',
+      subjectPh: 'Запит щодо проєкту',
+      messagePh: 'Вітаю, я хотів би обговорити проєкт...',
       send: 'Надіслати',
       sending: 'Надсилання...',
-      success: 'Ваше повідомлення успішно надіслано. Я скоро з вами зв\'яжусь!',
-      error: 'Виникла помилка при надсиланні повідомлення. Будь ласка, спробуйте пізніше.'
+      success: 'Повідомлення надіслано успішно! Я зв’яжуся з вами найближчим часом.',
+      error: 'Помилка надсилання. Спробуйте ще раз пізніше.',
     },
     footer: {
-      rights: 'Всі права захищені.',
-      position: 'Full-Stack розробник'
-    }
+      description:
+        'Full-Stack розробник, який створює сучасні веб-рішення з чистим кодом та креативними ідеями.',
+      navigation: 'Навігація',
+      connect: 'Контакти',
+      copyright: 'Євгеній Величко.',
+      builtWith: 'Зроблено з',
+      designed: 'Дизайн та розробка — Євгеній',
+    },
   },
-  ru: {
-    nav: {
-      home: 'Главная',
-      about: 'Обо мне',
-      skills: 'Навыки',
-      services: 'Услуги',
-      portfolio: 'Портфолио',
-      certificates: 'Сертификаты',
-      contact: 'Контакты'
-    },
-    hero: {
-      title: 'FULL-STACK РАЗРАБОТЧИК',
-      subtitle: 'Добро пожаловать в мое портфолио',
-      description: 'Я Full-stack разработчик, увлеченный созданием инновационных и эффективных веб-приложений. Имею большой опыт работы с различными технологиями и инструментами.',
-      viewWork: 'Мои работы',
-      contactMe: 'Связаться'
-    },
-    about: {
-      title: 'ОБО МНЕ',
-      personalInfo: 'ЛИЧНАЯ ИНФОРМАЦИЯ',
-      name: 'Имя',
-      age: 'Возраст',
-      address: 'Адрес',
-      nationality: 'Национальность',
-      languages: 'Языки',
-      experience: 'лет опыта',
-      background: 'МОЙ ОПЫТ',
-      downloadCV: 'Скачать резюме'
-    },
-    skills: {
-      title: 'МОИ НАВЫКИ',
-      subtitle: 'Техническая компетентность',
-      seeWork: 'Смотреть работы'
-    },
-    services: {
-      title: 'МОИ УСЛУГИ',
-      subtitle: 'Что я предлагаю',
-      webDev: 'Веб-разработка',
-      webDevDesc: 'Разработка веб-сайтов любой сложности с чистым кодом и современными принципами дизайна.',
-      frontendDev: 'Frontend разработка',
-      frontendDevDesc: 'Создание адаптивных, интуитивных пользовательских интерфейсов с использованием современных JavaScript фреймворков.',
-      backendDev: 'Backend разработка',
-      backendDevDesc: 'Создание надежных серверных приложений и API с использованием современных технологий.',
-      dbDesign: 'Проектирование баз данных',
-      dbDesignDesc: 'Проектирование и внедрение эффективных структур баз данных для оптимального хранения и получения данных.'
-    },
-    portfolio: {
-      title: 'МОЕ ПОРТФОЛИО',
-      subtitle: 'Последние проекты'
-    },
-    certificates: {
-      title: 'МОИ СЕРТИФИКАТЫ',
-      subtitle: 'Профессиональное развитие'
-    },
-    contact: {
-      title: 'КОНТАКТЫ',
-      subtitle: 'Свяжитесь со мной',
-      name: 'Ваше имя',
-      email: 'Ваш email',
-      subject: 'Тема',
-      message: 'Сообщение',
-      send: 'Отправить',
-      sending: 'Отправка...',
-      success: 'Ваше сообщение успешно отправлено. Я скоро с вами свяжусь!',
-      error: 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.'
-    },
-    footer: {
-      rights: 'Все права защищены.',
-      position: 'Full-Stack разработчик'
-    }
-  }
 };

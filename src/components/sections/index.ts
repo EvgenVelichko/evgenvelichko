@@ -1,0 +1,12 @@
+export { About } from './About';
+export { Hero } from './Hero';
+export { TypeWriter } from './TypeWriter';
+export { Skills } from './Skills';
+export { Services } from './Services';
+export { ServiceCard } from './ServiceCard';
+export { Contact } from './Contact';
+export { Certificates } from './Certificates';
+export { CertificateCard } from './CertificateCard';
+export { Portfolio } from './Portfolio';
+export { ProjectCard } from './ProjectCard';
+export { TicTacToeArtwork, RpgArtwork, RepoArtwork } from './ProjectArtwork';
