@@ -5,12 +5,23 @@ import type { GitHubRepo } from '@/types';
 
 export const GITHUB_USER = 'EvgenVelichko';
 
-export const EXCLUDED_REPOS = ['naturalbeauty', 'crypto-bank'];
+export const EXCLUDED_REPOS = ['naturalbeauty', 'crypto-bank', 'evgenvelychko'];
 
 export type { GitHubRepo };
 
 let cache: GitHubRepo[] | null = null;
 let inflight: Promise<GitHubRepo[]> | null = null;
+
+const normalizeRepo = (repo: any): GitHubRepo => ({
+    name: repo.name,
+    description: repo.description,
+    language: repo.language,
+    html_url: repo.html_url,
+    homepage: repo.homepage,
+    has_pages: repo.has_pages,
+    fork: repo.fork,
+    topics: Array.isArray(repo.topics) ? repo.topics : [],
+});
 
 const fetchRepos = async (): Promise<GitHubRepo[]> => {
     if (cache) return cache;
@@ -22,9 +33,10 @@ const fetchRepos = async (): Promise<GitHubRepo[]> => {
     )
         .then(res => (res.ok ? res.json() : []))
         .catch(() => [])
-        .then(repos => {
-            cache = repos;
-            return repos;
+        .then((repos: any[]) => {
+            const normalized = Array.isArray(repos) ? repos.map(normalizeRepo) : [];
+            cache = normalized;
+            return normalized;
         })
         .finally(() => {
             inflight = null;

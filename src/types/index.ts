@@ -9,6 +9,7 @@ export interface GitHubRepo {
     homepage: string | null;
     has_pages: boolean;
     fork: boolean;
+    topics: string[];
 }
 
 export interface Project {

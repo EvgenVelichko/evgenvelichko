@@ -8,8 +8,18 @@ import gallery from '@/assets/project/gallery.png';
 import project5 from '@/assets/project/project5.webp';
 import project6 from '@/assets/project/project6.webp';
 import ticTacToe from '@/assets/project/tic-tac-toe.png';
+import vysota from '@/assets/project/vysota.webp';
 
 export const staticProjects: Project[] = [
+    {
+        title: 'Vysota',
+        description:
+            'Alpine climbing landing page with 3D low-poly mountain, scroll parallax and animated nav.',
+        image: vysota,
+        tags: ['Three.js', 'WebGL', 'Vite', '3D'],
+        liveLink: 'https://evgenvelichko.github.io/vysota/',
+        githubLink: 'https://github.com/EvgenVelichko/vysota',
+    },
     {
         title: 'Money-Finance',
         description:

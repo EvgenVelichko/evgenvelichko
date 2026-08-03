@@ -46,7 +46,11 @@ export const Portfolio = () => {
                     description:
                         repo.description || 'New project from GitHub',
                     artwork: () => <RepoArtwork name={repo.name} />,
-                    tags: repo.language ? [repo.language] : ['GitHub'],
+                    tags: repo.topics.length > 0
+                        ? repo.topics
+                        : repo.language
+                            ? [repo.language]
+                            : ['GitHub'],
                     liveLink: repo.homepage || ghPages || undefined,
                     githubLink: repo.html_url,
                 };
